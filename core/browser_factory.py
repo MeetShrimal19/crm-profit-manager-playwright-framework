@@ -19,7 +19,7 @@ class BrowserFactory:
 
         self.browser = getattr(self.playwright,browser_name).launch(headless=headless)
 
-        self.context = self.browser.new_context()
+        self.context = self.browser.new_context(storage_state="auth.json")
 
         self.page = self.context.new_page()
 
